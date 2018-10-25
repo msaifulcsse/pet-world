@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<title>Pet world</title>
+
+	<style type="text/css">
+		
+		.div-main{
+			display: block;
+			position: absolute;
+            text-align: center;
+		}
+
+		.img-for-dog{
+			height: 375px;
+            width: 580px;
+		}
+
+		.img-for-cat{
+			display: none;
+			height: 375px;
+            width: 580px;
+		}
+
+		.img-for-parrot{
+			display: none;
+			height: 375px;
+            width: 580px;
+		}
+
+		.div-button{
+			/*text-align: right !important;*/
+            display: inline-grid;
+		}
+
+		.btn-cus-design{
+			padding: 15px;
+		    margin-top: 0px;
+		    margin-bottom: 35px;
+		    width: 22%;
+		    height: 85%;
+		    border-radius: 40px;
+		    border: 1px solid black;
+		    background-color: white;
+		}
+
+       .btn-changed{
+			background-color: red;
+            border: 1px solid red;
+            color: white;
+		} 
+
+		.btn-default{
+			background-color: white;
+            border: 1px solid black;
+            color: black;
+		}
+
+        .btn-cus-design:focus{ 
+        	outline: none; 
+        }
+
+		.div-body{
+			margin-top: 20px;
+		}
+
+		body {
+		    font-family: monospace;
+		    font-size: 25px;
+		    line-height: 1.428571;
+		    color: #333;
+		    font-weight: 500;
+		    background-color: #fff;
+		}
+
+	</style>
+
+	<script type="text/javascript">
+		
+		function dogFunction(){
+			//For button color changed
+            $("#btnPARROT").removeClass('btn-changed');
+			$("#btnCAT").removeClass('btn-changed');
+            $("#btnDOG").removeClass('btn-default');
+            $("#btnDOG").addClass('btn-changed');
+
+            //For image show-hide
+			$("#imgDOG").show();
+			$("#imgCAT").hide();
+			$("#imgPARROT").hide();
+		}
+
+		function catFunction(){
+            //For button color changed
+            $("#btnDOG").removeClass('btn-changed');
+            $("#btnPARROT").removeClass('btn-changed');
+			$("#btnCAT").removeClass('btn-default');
+            $("#btnCAT").addClass('btn-changed');
+            
+            //For image show-hide
+			$("#imgCAT").show();
+			$("#imgDOG").hide();
+			$("#imgPARROT").hide();
+		}
+
+		function parrotFunction(){
+			//For button color changed
+            $("#btnDOG").removeClass('btn-changed');
+            $("#btnCAT").removeClass('btn-changed');
+			$("#btnPARROT").removeClass('btn-default');
+            $("#btnPARROT").addClass('btn-changed');
+
+            //For image show-hide
+			$("#imgPARROT").show();
+			$("#imgCAT").hide();
+			$("#imgDOG").hide();
+		}
+
+	</script>
+
+</head>
+<body>
+<div class="div-main col-sm-12">
+	<div class="div-title col-sm-12">
+		<h1>Welcome to the Pet World !</h1>
+	</div>
+	<div class="div-body col-sm-12 row">
+		<div class="div-button col-sm-5">
+            <div class="row">
+            	<button class="btn-default btn-cus-design" id="btnDOG" onclick="dogFunction()">Dog</button>
+            </div>	
+			<div class="row">
+				<button class="btn-default btn-cus-design" id="btnCAT" onclick="catFunction()">Cat</button>
+			</div>
+			<div class="row">
+				<button class="btn-default btn-cus-design" id="btnPARROT" onclick="parrotFunction()">Parrot</button>
+			</div>
+			
+		</div>
+		<div class="div-image col-sm-7 row" style="text-align: left;">
+			<!--https://s3-ap-southeast-1.amazonaws.com/he-public-data/Dog%20image69059f5.jpg
+	            https://s3-ap-southeast-1.amazonaws.com/he-public-data/At%20image7532683.jpg
+	            https://s3-ap-southeast-1.amazonaws.com/he-public-data/Parrot%20image7f2c45e.jpg -->
+			<img src="images/Dog_image.jpg" class="img-for-dog" id="imgDOG" alt="Dog">
+			<img src="images/Cat_image.jpg" class="img-for-cat" id="imgCAT" alt="Cat">
+			<img src="images/Parrot_image.jpg" class="img-for-parrot" id="imgPARROT" alt="Parrot">
+		</div>
+	</div>
+</div>
+</body>
+</html>
